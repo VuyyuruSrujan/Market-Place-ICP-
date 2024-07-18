@@ -1,0 +1,442 @@
+body {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+}
+
+img {
+  max-width: 50vw;
+  max-height: 25vw;
+  display: block;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  flex-flow: row wrap;
+  max-width: 40vw;
+  margin: auto;
+  align-items: baseline;
+}
+
+button[type="submit"] {
+  padding: 5px 20px;
+  margin: 10px auto;
+  float: right;
+}
+
+#greeting {
+  margin: 10px auto;
+  padding: 10px 60px;
+  border: 1px solid #222;
+}
+
+#greeting:empty {
+  display: none;
+}
+
+body{
+  background-color: white;
+}
+
+#Heading1{
+  font-family: sans-serif;
+  font-size: 65px;
+  margin-top: 50px;
+  color: wheat;
+}
+
+
+#SideHead{
+  color: white;
+}
+#ImgDiv{
+  margin-right: 100px;
+  height: 600px;
+  width: 1000px;
+}
+#mainCar{
+  filter: drop-shadow(1px 1px 150px rgb(247, 245, 245));
+  margin-right: -800px;
+  max-height: 600px;
+  max-width: 2000px;
+  margin-top: -650px;
+  float: right;
+}
+#CarText{
+  font-size: 90px;
+  align-items:center;
+  margin-left: 50px;
+  color: lightgreen;
+}
+#line{
+  border: 2.5px solid red;
+  width: 600px;
+}
+.down-arrow {
+  position: absolute;
+  bottom: 20px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid wheat;
+  animation: bounce 2s infinite;
+  margin-left: 700px;
+  cursor: pointer;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+#SecondPart{
+position: absolute;
+top: 700px;
+}
+#NavBar{
+    border: 2px solid wheat;
+    display: flex;
+    justify-content:flex-end;
+    width: 1500px;
+    position: absolute;
+    top: 20px;
+    box-shadow: 5px 5px wheat;
+}
+
+/* styles.css */
+
+#NavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 90px;
+}
+
+#NavBar li {
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: brown;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  width: 350px;
+}
+
+.dropdown-content li {
+  padding: 10px;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#NavBar li:hover {
+  background-color: wheat;
+  color: black;
+}
+#TeslaMainDiv{
+  position: relative;
+}
+// .TeslaCard{
+//   // margin-left: 1100px;
+//   // margin-top: 100px;
+//   // max-height: 700px;
+//   // position: relative;
+//   // top: -100px;
+//   // height: 550px;
+//   height: 1500px;
+//   max-width: 4000px;
+// }
+// .TeslaHeading{
+//   color: white;
+//   font-family: sans-serif;
+//   font-size: 45px;
+//   position: absolute;
+//   top: 10px;
+// }
+.TeslaCard {
+  max-height: 8000px; /* Set the height of the card */
+  max-width: 8000px; /* Set the maximum width the card can expand to */
+  // margin-left: 1100px; /* Adjust left margin */
+  margin-top: 100px; /* Adjust top margin */
+  position: relative; /* Position relative to its normal position */
+  top: -30px; /* Adjust position relative to its normal position */
+  padding: 20px; /* Example padding for content inside the card */
+  right: 20px;
+}
+img{
+  height: 800px;
+  width: 1515px;
+}
+
+#TeslaText{
+  text-decoration: none;
+  color: white;
+}
+
+#CarInfo{
+  color: whitesmoke;
+  margin-top: -600px;
+  margin-left: 200px;
+}
+
+//////////////////////////////////////////////////////////////Prior.jsx
+#MainDiv{
+  background-image: url("teslaPageimg.avif");
+  height: 1400px;
+  background-repeat: no-repeat;
+  background-size: 1500px 60px;
+}
+#head1{
+  font-family: sans-serif;
+  font-size: 45px;
+}
+
+#ConnectBtns{
+  margin-left: 1090px;
+  position: absolute;
+  top: 20px;
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px black;
+}
+#ConnectBtns:hover{
+  background-color: black;
+  color: white;
+}
+#PrincPrint{
+  border: 2px solid black;
+  margin-left: 40px;
+  padding: 5px;
+  padding-left: 100px;
+}
+#ModelsText{
+  margin-left: 240px;
+  color: black;
+  line-height: 2;
+  list-style: none;
+}
+#imageblack{
+margin-top: -350px;
+margin-left: 600px;
+}
+#teslVideo{
+  margin-right: 100px;
+  float: right;
+  margin-right: 100px;
+  margin-top: -20px;
+}
+#Features{
+  margin-left: 100px;
+  margin-top: 100px;
+}
+// #teslVideo1{
+//   float: left;
+//   margin-left: 100px;
+//   width: 1200px;
+// }
+#modelyimg{
+  float: left;
+  margin-left: 100px;
+}
+#ExtraDet{
+  float: right;
+  margin-right: 300px;
+  margin-top: 70px;
+  line-height: 2;
+}
+#Secong{
+  margin-top: 100px;
+}
+#OderTesla1{
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  margin-top: 80px;
+  margin-left: 700px;
+  font-family: sans-serif;
+  box-shadow: 5px 5px black;
+  font-size: 20px;
+}
+#OderTesla1:hover{
+  background-color: black;
+  color: white;
+}
+#Tesladivv{
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-family: sans-serif;
+  height: 50px;
+  padding-top: 20px;
+}
+#ProfileBtn{
+  margin-left: 1300px;
+  position: absolute;
+  top: 52px;
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px black;
+}
+#ProfileBtn:hover{
+  background-color: black;
+  color: white;
+}
+#ProfileTxt{
+  font-family: sans-serif;
+  font-size: 45px;
+  margin: 30px;
+}
+#ProfileUl{
+  line-height: 3;
+}
+#ProfDet{
+  margin-left: 100px;
+  line-height: 1.4;
+  font-size: 40px;
+  margin-top: -350px;
+}
+input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  font-size: 30px;
+}
+#Truck{
+  width: 650px;
+  max-height: 450px;
+  margin-right: 90px;
+  margin-top: -100px;
+}
+#SubmitUserDetails{
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px black;
+  margin-top: 0px;
+}
+#SubmitUserDetails:hover{
+  background-color: black;
+  color: white;
+}
+#LamboHead{
+  font-family: sans-serif;
+  font-size: 45px;
+  margin-top: 40px;
+}
+#Lambomainimg{
+  margin-right: 0;
+}
+#Details{
+  margin-top: -250px;
+  margin-left: 170px;
+  line-height: 2.5;
+}
+#LambOrderBtn{
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px black;
+}
+#LambOrderBtn:hover{
+  background-color: black;
+  color: white;
+}
+#Benzimg{
+  margin-right: 20px;
+  max-height: 500px;
+  width: 1000px;
+}
+#BenzDetails{
+  margin-top: -400px;
+  margin-left: 100px;
+  line-height: 2.5;
+}
+#AudiDetails{
+  margin-left: 100px;
+  line-height: 2.5;
+}
+#Audibtn{
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px black;
+  margin-top: 50px;
+}
+#Audibtn:hover{
+  background-color: black;
+  color: white;
+}
+#Audiimg{
+  margin-right: -180px;
+  margin-top: -500px;
+}
+#RegisteredForm{
+  margin-left: 200px;
+  line-height: 2;
+  margin-top: -350px;
+}
+#HeadPayment{
+  margin-top: 50px;
+  font-family: sans-serif;
+  font-size: 40px;
+}
+#PaymentForm{
+  line-height: 6;
+  margin-left: 90px;
+}
+#MakeTransactionBtn{
+  border: 2px solid black;
+  height: 40px;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  box-shadow: 5px 5px black;
+  margin-left: 100px;
+}
+#MakeTransactionBtn:hover{
+  background-color: black;
+  color: white;
+}
+#Contactdet{
+  float: right;
+  height: 300px;
+  width: 600px;
+  line-height: 2;
+  margin-right: 100px;
+  margin-top: 100px;
+}
+#BalanceDiv{
+  position: absolute;
+  top: 150px;
+  right: 300px;
+  font-family: sans-serif;
+  font-size: 40px;
+}
+#tess{
+  text-decoration: none;
+  color: black;
+}
