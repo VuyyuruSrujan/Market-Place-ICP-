@@ -3,6 +3,7 @@ import { AuthClient } from "@dfinity/auth-client";
 import { HttpAgent } from "@dfinity/agent";
 import { useNavigate } from 'react-router-dom';
 import { Cars_backend } from 'declarations/Cars_backend';
+import PlugConnect from '@psychedelic/plug-connect';
 
 export default function Another1(){
     const [identity, setIdentity] = useState(null);
@@ -63,13 +64,25 @@ export default function Another1(){
         alert("connect to internet identity");
     }
 }
-    function OrderTesla(){
+    async function OrderTesla(){
         if (identity && identity.getPrincipal() != "" && identity.getPrincipal() != null) {
-        navigate('/Payment', { state: { principal: identity.getPrincipal().toText() }})
-        }else{
+            navigate('/Payment',{ state: { principal: identity.getPrincipal().toText() } })
+            // const connected = await window.ic.plug.isConnected();
+        //     if(connected){
+        //     const params = {
+        //         to: 'xxxxx-xxxxx-xxxxx-xxxxx',
+        //         amount: 200000,
+        //         memo: '123451231231',
+        //     };
+        //     const result = await window.ic.plug.requestTransfer(params);
+        //     console.log("trans",result);
+        }
+        else{
             alert("connect to internet identity!")
         }
-    }
+}
+
+
     function handleTeslaClick(event) {
         event.preventDefault();
         document.getElementById('teslasection').scrollIntoView({ behavior: 'smooth' });
@@ -136,7 +149,7 @@ export default function Another1(){
                         </div>
                         <button id="OderTesla1" onClick={OrderTesla}><b> Order Now </b></button><br /><br /><br />
                     </div>                
-            </div>
+                </div>
             </div>
         </>
     );

@@ -12,10 +12,6 @@ import Payment from './Payment';
 function App() {
     
   return(
-    // <>
-    //   <Profile />
-    //   {/* <WalletButton /> */}
-    // </>
     <Router>
       <Routes>
         <Route path="/" element={<Another1 />} />
