@@ -19,11 +19,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@dfinity/agent": "^1.4.0",
     "@dfinity/auth-client": "^1.4.0",
-    "@dfinity/principal": "^2.0.0",
+    "@dfinity/principal": "^1.4.0",
     "@hold-ic/react": "^1.1.2",
-    "@react-three/drei": "^9.108.3",
-    "@react-three/fiber": "^8.16.8",
-    "ic-stoic-identity": "^2.0.0",
     "react-router-dom": "^6.25.0",
     "three": "^0.166.1"
   }

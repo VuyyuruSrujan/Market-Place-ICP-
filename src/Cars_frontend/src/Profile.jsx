@@ -1,11 +1,7 @@
-import { Cars_backend } from 'declarations/Cars_backend';
-import { Principal } from '@dfinity/principal';
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 export default function Profile() {
-    const location = useLocation();
-    const { principal } = location.state || {};
+    const principal = window.auth.principal;
     const [userDetails, setUserDetails] = useState(null);
     var [Showbalance ,setShowbalance] = useState("");
 
@@ -13,7 +9,7 @@ export default function Profile() {
         const name = document.getElementById("UserName").value;
         const Age = BigInt(document.getElementById("UserAge").value);
         const Address = document.getElementById("UserAddress").value;
-        const princi = Principal.fromText(principal);
+        const princi = principal;
         const mail = document.getElementById("usermail").value;
 
         const UserDet = {
@@ -23,16 +19,14 @@ export default function Profile() {
             MAIL: mail,
             Princi: princi
         };
-
-        const details = await Cars_backend.addUser(UserDet);
+        const details = await window.canister.cars.addUser(UserDet);
         console.log(details);
         getDetails();
-        alert(details);
+        alert(details.ok || details.err);
     }
 
     async function getDetails() {
-        const PrincipalfromAnother = Principal.fromText(principal);
-        const result = await Cars_backend.getUserDetByPrincipal(PrincipalfromAnother);
+        const result = await window.canister.cars.getUserDetByPrincipal(principal);
         if (result && result.length > 0) {
             setUserDetails(result);
         } else {
@@ -42,11 +36,10 @@ export default function Profile() {
 
     useEffect(() => {
         getDetails();
-    }, []);
+    }, [getDetails]);
 
     async function getbalance(){
-        const PrincipalforBal = Principal.fromText(principal);
-        var balance = await Cars_backend.balanceOf(PrincipalforBal);
+        var balance = await window.canister.cars.balanceOf(principal);
         console.log(balance);
         if(balance!= null  || balance!=""){
         setShowbalance(balance);

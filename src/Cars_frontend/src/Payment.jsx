@@ -1,29 +1,31 @@
-
-import { useLocation } from "react-router-dom";
-import { Principal } from '@dfinity/principal';
+import { Principal } from "@dfinity/principal";
 import { useEffect, useState } from "react";
-import { Cars_backend } from 'declarations/Cars_backend';
-
 export default function(){
-    const location = useLocation();
-    const { principal } = location.state || {};
-    var [Showbalance ,setShowbalance] = useState("");
+    const principal = window.auth.principal;
+    let [Showbalance ,setShowbalance] = useState("");
 
     async function MakeTransaction(){
-        var SenderPrincipal = Principal.fromText(principal);
-        var ReceiverPrincipal =Principal.fromText(document.getElementById("ReceiverPrincipal").value);
-        var amount = BigInt(document.getElementById("amount").value);
-
-        var TransactionStatus = await Cars_backend.transfer(SenderPrincipal,ReceiverPrincipal,amount)
-        console.log(TransactionStatus);
-        if("ok" in TransactionStatus){
-            alert("Transaction successful");
-            getbalance();
+        try {
+            let SenderPrincipal = principal;
+            let ReceiverPrincipal = Principal.fromText(document.getElementById("ReceiverPrincipal").value);
+            let amount = BigInt(document.getElementById("amount").value);
+    
+            let TransactionStatus = await window.canister.cars.transfer(SenderPrincipal,ReceiverPrincipal,amount)
+            console.log(TransactionStatus);
+            if("ok" in TransactionStatus){
+                alert("Transaction successful");
+                getbalance();
+            }
+            if("err" in TransactionStatus){
+                alert(TransactionStatus.err)
+            }
+        } catch (error) {
+            console.error(error)
+            alert(error)
         }
     }
     async function getbalance(){
-        const PrincipalforBal = Principal.fromText(principal);
-        var balance = await Cars_backend.balanceOf(PrincipalforBal);
+        let balance = await window.canister.cars.balanceOf(principal);
         console.log(balance);
         if(balance!= null  || balance!=""){
         setShowbalance(balance);
