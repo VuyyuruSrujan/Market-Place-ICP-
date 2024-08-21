@@ -6,8 +6,19 @@ export default function Lambhorghini(){
     const location = useLocation();
     const { principal } = location.state || {};
 
-    function OrderLambo(){
-        navigate('/Payment',{ state: { principal} })
+    async function OrderLambo(){
+        // navigate('/Payment',{ state: { principal} })
+        window.ic.plug.requestConnect();
+            const connected = await window.ic.plug.isConnected();
+            if(connected){
+            const params = {
+                to: 'xxxxx-xxxxx-xxxxx-xxxxx',
+                amount: 100000000,
+                memo: '123451231231',
+            };
+            const result = await window.ic.plug.requestTransfer(params);
+            console.log("trans",result);
+        }
     }
 
         

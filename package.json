@@ -19,7 +19,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@dfinity/agent": "^1.4.0",
     "@dfinity/auth-client": "^1.4.0",
-    "@dfinity/principal": "^2.0.0",
+    "@dfinity/principal": "^1.4.0",
     "@hold-ic/react": "^1.1.2",
     "@psychedelic/plug-connect": "^0.2.0",
     "@react-three/drei": "^9.108.3",

@@ -65,21 +65,23 @@ export default function Another1(){
     }
 }
     async function OrderTesla(){
-        if (identity && identity.getPrincipal() != "" && identity.getPrincipal() != null) {
-            navigate('/Payment',{ state: { principal: identity.getPrincipal().toText() } })
-            // const connected = await window.ic.plug.isConnected();
-        //     if(connected){
-        //     const params = {
-        //         to: 'xxxxx-xxxxx-xxxxx-xxxxx',
-        //         amount: 200000,
-        //         memo: '123451231231',
-        //     };
-        //     const result = await window.ic.plug.requestTransfer(params);
-        //     console.log("trans",result);
+        // if (identity && identity.getPrincipal() != "" && identity.getPrincipal() != null) {
+            // navigate('/Payment',{ state: { principal: identity.getPrincipal().toText() } })
+            window.ic.plug.requestConnect();
+            const connected = await window.ic.plug.isConnected();
+            if(connected){
+            const params = {
+                to: 'xxxxx-xxxxx-xxxxx-xxxxx',
+                amount: 100000000,
+                memo: '123451231231',
+            };
+            const result = await window.ic.plug.requestTransfer(params);
+            console.log("trans",result);
         }
-        else{
-            alert("connect to internet identity!")
-        }
+        // else{
+        //     alert("connect to internet identity!")
+        // }
+    
 }
 
 
